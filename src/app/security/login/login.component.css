@@ -1,0 +1,50 @@
+body {
+    background: #50d8af;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, #049c6a), color-stop(100%, #1c2b5a));
+    /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+    /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+    /* IE10+ */
+    background: radial-gradient(ellipse at center, #50d8af 1%, #0c2e8a 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0264d6', endColorstr='#1c2b5a', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    height: calc(100vh);
+  
+  }
+  
+  body>.grid {
+    height: 100%;
+  }
+  
+  .image {
+    height: 100%;
+    width: 100%;
+    font-size: 50px;
+  
+  }
+  
+  .column {
+    max-width: 450px;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  .has-error {
+    color: red;
+  
+  }
+  
+  .has-success {
+    color: green;
+  
+  }
+  

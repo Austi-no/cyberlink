@@ -1,0 +1,148 @@
+<body>
+  <div class="ui middle aligned center aligned grid ">
+    <div class="column">
+      <h2 class="ui teal image header">
+        <img src="assets/images/logo.png" class="image">
+        <div class="content">
+          Create a new Account
+        </div>
+      </h2>
+      <!-- Custom Success/Error Message -->
+      <div class="row show-hide-message ">
+        <div [ngClass]="messageClass">
+          {{ message }}
+        </div>
+      </div>
+
+
+      <form class="ui large form" [formGroup]="signupForm">
+        <div class="ui stacked segment">
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.lastName.errors && signupForm.controls.lastName.dirty) || (signupForm.controls.lastName.dirty), 'has-success': !signupForm.controls.lastName.errors }">
+              <input type="text" formControlName="lastName" name="lastName" placeholder="Surname">
+              <i class="user icon"></i>
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.lastName.errors?.required && signupForm.controls.lastName.dirty"
+                class="has-error">This field is required</li>
+            </ul>
+          </div>
+
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.firstName.errors && signupForm.controls.firstName.dirty) || (signupForm.controls.firstName.dirty), 'has-success': !signupForm.controls.firstName.errors }">
+              <input type="text" formControlName="firstName" name="firstName" placeholder="First Name">
+              <i class="user icon"></i>
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.firstName.errors?.required && signupForm.controls.firstName.dirty"
+                class="has-error">This field is required</li>
+            </ul>
+          </div>
+
+
+
+
+
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.username.errors && signupForm.controls.username.dirty) || (!usernameValid && signupForm.controls.username.dirty), 'has-success': !signupForm.controls.username.errors  && usernameValid}">
+              <input type="text" (blur)="checkUsername()" formControlName="username" name="username"
+                placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.username.errors?.required && signupForm.controls.username.dirty"
+                class="has-error">This field is required</li>
+              <li
+                *ngIf="signupForm.controls.username.errors?.minlength && signupForm.controls.username.dirty || signupForm.controls.username.errors?.maxlength && signupForm.controls.username.dirty "
+                class="has-error">Minimum characters: 3, Maximum characters: 15</li>
+              <li *ngIf="signupForm.controls.username.errors?.validateUsername && signupForm.controls.username.dirty"
+                class="has-error">Username must not have any special characters</li>
+              <li *ngIf="usernameMessage" class="has-success">{{ usernameMessage }}</li>
+
+            </ul>
+          </div>
+
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.email.errors && signupForm.controls.email.dirty) || ( !emailValid && signupForm.controls.email.dirty), 'has-success': !signupForm.controls.email.errors  && emailValid}">
+
+              <input type="text" (blur)="checkEmail()" formControlName="email" name="email" placeholder="email">
+              <i class="envelope outline icon "></i>
+
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.email.errors?.required && signupForm.controls.email.dirty"
+                class="has-error">This field is
+                required</li>
+              <li
+                *ngIf="(signupForm.controls.email.errors?.minlength && signupForm.controls.email.dirty || signupForm.controls.email.errors?.maxlength && signupForm.controls.email.dirty ) && signupForm.controls.email.dirty"
+                class="has-error">
+                Minimum characters: 5, Maximum characters: 30</li>
+              <li *ngIf="signupForm.controls.email.errors?.validateEmail && signupForm.controls.email.dirty"
+                class="has-error">This must
+                be a valid
+                e-mail</li>
+              <li *ngIf="emailMessage" class="has-success">{{ emailMessage}}</li>
+            </ul>
+
+          </div>
+
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.password.errors && signupForm.controls.password.dirty), 'has-success': !signupForm.controls.password.errors}">
+              <i class="lock icon"></i>
+              <input type="password" formControlName="password" name="password" placeholder="password">
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.password.errors?.required && signupForm.controls.password.dirty"
+                class="has-error">This field is required
+              </li>
+              <li
+                *ngIf="signupForm.controls.password.errors?.minlength && signupForm.controls.password.dirty || signupForm.controls.password.errors?.maxlength && signupForm.controls.password.dirty "
+                class="has-error">
+                Minimum characters: 8, Maximum characters: 35</li>
+              <li *ngIf="signupForm.controls.password.errors?.validatePassword && signupForm.controls.password.dirty"
+                class="has-error">Password must
+                be at least 8 characters but no more than 35</li>
+            </ul>
+          </div>
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': (signupForm.controls.confirm.errors && signupForm.controls.confirm.dirty) || (signupForm.errors?.matchingPasswords && signupForm.controls.confirm.dirty), 'has-success': !signupForm.controls.confirm.errors}">
+              <i class="lock icon"></i>
+              <input type="password" formControlName="confirm" name="confirm" placeholder="confirm Password">
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="signupForm.controls.confirm.errors?.required && signupForm.controls.confirm.dirty"
+                class="has-error">This field
+                is required</li>
+              <li *ngIf="signupForm.errors?.matchingPasswords && signupForm.controls.confirm.dirty" class="has-error">
+                Password do not
+                match</li>
+            </ul>
+          </div>
+          <button class="ui teal fluid button" [disabled]="!signupForm.valid || processing " (click)="signup()">
+            Create Account</button>
+        </div>
+      </form>
+
+      <div class="ui message mb-4">
+        Already have an account? <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
+</body>

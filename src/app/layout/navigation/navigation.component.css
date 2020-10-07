@@ -1,0 +1,33 @@
+.social-part .fa {
+  padding-right: 20px;
+}
+
+ul li a {
+  margin-right: 20px;
+}
+
+.active {
+  /* background-color: #0c2e8a; */
+  color: #0c2e8a !important;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  transition: 0.7s;
+}
+
+.active:hover {
+  background-color: #0c2e8a;
+  color: white !important;
+
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+/* .navbar {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+} */
+/* .fixed-top {
+  height: 60px;
+} */

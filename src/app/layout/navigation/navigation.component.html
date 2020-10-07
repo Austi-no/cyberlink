@@ -1,0 +1,75 @@
+<div id="header">
+
+  <nav class="navbar navbar-expand-sm   navbar-light bg-light fixed-top ">
+
+    <a class=" navbar-brand" href="#">I-TECHIE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+            routerLink="/">Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown dmenu">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Our Service
+          </a>
+          <div class="dropdown-menu sm-menu">
+            <a class="dropdown-item" href="#">service2</a>
+            <a class="dropdown-item" href="#">service 2</a>
+            <a class="dropdown-item" href="#">service 3</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div class="social-part">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="service.getToken()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="dashboard">Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="feeds">Feeds</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="profile">Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="ui  label " style="background: #0c2e8a; color: white;" (click)="logout()">
+              <i class="lock alternate icon"></i>
+              <b>Logout</b>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="ml-4">
+        <a class="ui  label " style="background: #0c2e8a; color: white;" routerLink="login" *ngIf="!service.getToken()">
+          <i class="unlock alternate icon"></i>
+          <b>Login</b>
+        </a>
+        <a class="ui label ml-2" style="background: #50d8af; color: white;" routerLink="sign-up"
+          *ngIf="!service.getToken()">
+          <i class="user plus icon"></i>
+          <b> Sigup</b>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+</div>

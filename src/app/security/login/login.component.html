@@ -1,0 +1,70 @@
+<body>
+  <div class="ui middle aligned center aligned grid ">
+    <div class="column">
+      <h2 class="ui teal image header">
+        <img src="assets/images/logo.png" class="image">
+        <div class="content">
+          Login To Account
+        </div>
+      </h2>
+      <!-- Custom Success/Error Message -->
+      <div class="row show-hide-message ">
+        <div [ngClass]="messageClass">
+          {{ message }}
+        </div>
+      </div>
+
+
+      <form class="ui large form" [formGroup]="loginForm" #customLoadingTemplate>
+
+        <div class="ui stacked segment">
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': loginForm.controls.username.errors && loginForm.controls.username.dirty, 'has-success': loginForm.controls.username.valid && loginForm.controls.username.dirty }">
+              <input type="text" formControlName="username" name="username" placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.dirty"
+                class="has-error">This field
+                is
+                required.</li>
+            </ul>
+          </div>
+
+
+          <div class="field">
+            <div class="ui left icon input"
+              [ngClass]="{'has-error': loginForm.controls.password.errors && loginForm.controls.password.dirty, 'has-success': loginForm.controls.password.valid && loginForm.controls.password.dirty }">
+              <i class="lock icon"></i>
+              <input type="password" formControlName="password" name="password" placeholder="password">
+            </div>
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password.dirty"
+                class="has-error">This field
+                is
+                required.</li>
+            </ul>
+          </div>
+
+          <button class="ui teal fluid button" [disabled]="!loginForm.valid || processing " (click)="login()">
+            Login</button>
+        </div>
+      </form>
+
+      <div class="ui message mb-4">
+        Already have an account? <a routerLink="/login">Login</a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px',    primaryColour: '#0c2e8a'  }"
+  [template]="customLoadingTemplate">
+</ngx-loading>
