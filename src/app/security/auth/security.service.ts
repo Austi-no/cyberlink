@@ -11,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SecurityService {
 
 
-  baseUrl: String = "http://localhost:8585"
+  baseUrl: String = ""
   authToken;
   user;
   options;
