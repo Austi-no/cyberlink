@@ -14,7 +14,7 @@ export class SecurityService {
   // baseUrl: String = "http://localhost:8080"
 
   baseUrl: String = ""
-  
+
   authToken;
   user;
   options;
