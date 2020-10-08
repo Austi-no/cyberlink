@@ -11,46 +11,36 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
-            routerLink="/">Home
+          <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown dmenu">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Our Service
-          </a>
-          <div class="dropdown-menu sm-menu">
-            <a class="dropdown-item" href="#">service2</a>
-            <a class="dropdown-item" href="#">service 2</a>
-            <a class="dropdown-item" href="#">service 3</a>
-          </div>
+          <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Quiz</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+          <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">Contact</a>
         </li>
       </ul>
       <div class="social-part">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="service.getToken()">
           <li class="nav-item">
-            <a class="nav-link" routerLink="dashboard">Dashboard
+            <a class="nav-link" routerLink="dashboard" data-toggle="collapse"
+              data-target=".navbar-collapse.show">Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="feeds">Feeds</a>
+            <a class="nav-link" routerLink="feeds" data-toggle="collapse" data-target=".navbar-collapse.show">Feeds</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="profile">Profile</a>
+            <a class="nav-link" routerLink="profile" data-toggle="collapse"
+              data-target=".navbar-collapse.show">Profile</a>
           </li>
 
           <li class="nav-item">
-            <a class="ui  label " style="background: #0c2e8a; color: white;" (click)="logout()">
+            <a class="ui  label " style="background: #0c2e8a; color: white;" (click)="logout()" data-toggle="collapse"
+              data-target=".navbar-collapse.show">
               <i class="lock alternate icon"></i>
               <b>Logout</b>
             </a>
@@ -59,12 +49,13 @@
         </ul>
       </div>
       <div class="ml-4">
-        <a class="ui  label " style="background: #0c2e8a; color: white;" routerLink="login" *ngIf="!service.getToken()">
+        <a class="ui  label " style="background: #0c2e8a; color: white;" routerLink="login" *ngIf="!service.getToken()"
+          data-toggle="collapse" data-target=".navbar-collapse.show">
           <i class="unlock alternate icon"></i>
           <b>Login</b>
         </a>
         <a class="ui label ml-2" style="background: #50d8af; color: white;" routerLink="sign-up"
-          *ngIf="!service.getToken()">
+          *ngIf="!service.getToken()" data-toggle="collapse" data-target=".navbar-collapse.show">
           <i class="user plus icon"></i>
           <b> Sigup</b>
         </a>

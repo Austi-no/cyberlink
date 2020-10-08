@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'update-user', component: UpdateUserComponent, canActivate: [AuthGuard] },
   { path: 'user/:username', component: PublicProfileComponent, canActivate: [AuthGuard] },
   { path: 'feeds', component: FeedsComponent, canActivate: [AuthGuard] },
-  { path: 'edit-feed/:id', component: EditPostComponent, canActivate: [AuthGuard] },
+  { path: 'edit-feed', component: EditPostComponent },
   { path: '**', component: HomeComponent },
 ];
 

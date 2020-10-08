@@ -10,6 +10,8 @@ import { SecurityService } from 'src/app/security/auth/security.service';
 export class FeedService {
 
 
+  // baseUrl: String = "http://localhost:8080"
+
   baseUrl: String = ""
   options: { headers: any; };
   authToken: string | string[];
