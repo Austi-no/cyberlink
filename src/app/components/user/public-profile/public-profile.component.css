@@ -1,0 +1,70 @@
+.container {
+  -webkit-user-select: none;
+  margin: 100px auto;
+  background: #fff;
+  color: #b3b8cd;
+  border-radius: 5px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+}
+.cover-photo {
+  background: url("/assets/images/profile/pic-bg.jpg");
+  background-size: cover;
+  height: 160px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+.profile {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 93px 0px 0px -175px;
+  border: 1px xolid #f0f0f0;
+  padding: 7px;
+  background: #f0f0f0;
+}
+
+.profile-name {
+  font-size: 25px;
+  font-size: bold;
+  margin: 27px 0px 0px 120px;
+}
+.about {
+  margin-top: 35px;
+  line-height: 21px;
+}
+button {
+  margin: 10px 0px 40px 0px;
+}
+.msg-btn,
+.follow-btn {
+  background: #03bfbc;
+  border: 1px solid #03bfbc;
+  padding: 10px 25px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.follow-btn {
+  margin-left: 10px;
+  background: transparent;
+  color: #02899c;
+}
+.follow-btn:hover {
+  background: #03bfbc;
+  color: #fff;
+  transition: 0.5s;
+}
+.container i {
+  padding-left: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.container i:hover {
+  color: #03bfbc;
+}

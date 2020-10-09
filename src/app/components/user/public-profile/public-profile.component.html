@@ -1,16 +1,30 @@
-<h1 class="page-header">Public Profile</h1>
-
-<!-- Custom Success/Error Message -->
+<div class="body " >
+  
+  <!-- Custom Success/Error Message -->
 <div class="row show-hide-message" *ngIf="message">
   <div [ngClass]="messageClass">
     {{ message }}
   </div>
 </div>
 
-<!-- Table to Display User Info -->
-<ul *ngIf="foundProfile" class="list-group">
-  <!-- Username -->
-  <li class="list-group-item"><strong>Username: </strong>{{ username }}</li>
-  <!-- E-Mail -->
-  <li class="list-group-item"><strong>E-Mail: </strong>{{ email }}</li>
-</ul>
+  
+  <div class="container" *ngIf="foundProfile">
+    <div class="cover-photo">
+      <img src="assets/images/profile/pic.png" class="profile" alt="">
+    </div>
+    <div class="profile-name">
+      {{ username }}
+    </div>
+    <p class="about">Ama full stack developer with several years of experience </p>
+    <button class="msg-btn">Message Me</button>
+    <button class="follow-btn">Following</button>
+  
+    <div class="">
+      <i class="facebook icon"></i>
+      <i class="twitter icon"></i>
+      <i class="instagram icon"></i>
+      <i class="youtube icon"></i>
+    </div>
+  </div>
+  
+</div>
