@@ -6,13 +6,15 @@
         <div class="content">
           Login To Account
         </div>
-      </h2>
-      <!-- Custom Success/Error Message -->
-      <div class="row show-hide-message ">
+
+             <!-- Custom Success/Error Message -->
+      <div class="content2 show-hide-message ">
         <div [ngClass]="messageClass">
           {{ message }}
         </div>
       </div>
+      </h2>
+ 
 
 
       <form class="ui large form" [formGroup]="loginForm" #customLoadingTemplate>
