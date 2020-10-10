@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { SecurityService } from 'src/app/security/auth/security.service';
 
 @Component({
@@ -29,7 +30,9 @@ export class UpdateUserComponent implements OnInit {
   uploadedFilePath: any;
   id: void;
   option;
-  constructor(private formBuilder: FormBuilder, private service: SecurityService, private actRoute: ActivatedRoute, private http: HttpClient) { }
+
+  loading: boolean = true
+  constructor(private formBuilder: FormBuilder, private service: SecurityService, private actRoute: ActivatedRoute, private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.service.getProfile().subscribe(res => {
@@ -46,6 +49,7 @@ export class UpdateUserComponent implements OnInit {
       this.city = res.user.city
       this.country = res.user.country
       this.user = res.user._id
+      this.loading = false
     })
     this.updateUserForm = this.formBuilder.group({
       description: [''],
@@ -69,15 +73,18 @@ export class UpdateUserComponent implements OnInit {
 
 
   updateUser(id: any, updateUserForm: FormGroup) {
-
+    this.loading = true
     id = this.user
     this.user = this.updateUserForm.get('_id').setValue(this.user)
     updateUserForm = this.updateUserForm.value
 
     this.service.updateUserProfile(id, updateUserForm).subscribe(res => {
       console.log(res)
+      this.loading = false
+      this.toastr.success('', 'Your profile has been updated!')
     }, (err) => {
       console.log(err);
+      this.toastr.error('','An error occurred while updating your profile...')
     })
   }
 

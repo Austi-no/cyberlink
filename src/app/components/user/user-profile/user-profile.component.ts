@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
   address: any;
   city: any;
   country: any;
-
+  loading: boolean = true
   constructor(private service: SecurityService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -39,6 +39,7 @@ export class UserProfileComponent implements OnInit {
       this.address = res.user.address
       this.city = res.user.city
       this.country = res.user.country
+      this.loading = false
     })
   }
 

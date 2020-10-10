@@ -257,7 +257,9 @@ li.post-comment .comet-avatar {
   .btn-share {
     display: inline !important;
     padding: 11px 25px !important;
-    
-
   }
+}
+
+.active.loading {
+  color: red;
 }

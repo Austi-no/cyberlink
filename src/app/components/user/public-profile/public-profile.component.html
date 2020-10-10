@@ -1,3 +1,8 @@
+
+<div class="ui inverted dimmer" [class.active]='loading'>
+  <div class="ui small text loader">Loading</div>
+</div>
+
 <div id="body " >
   
   <!-- Custom Success/Error Message -->
@@ -13,9 +18,9 @@
       <img src="assets/images/profile/pic.png" class="profile" alt="">
     </div>
     <div class="profile-name">
-      {{ username }}
+      @{{ username }}
     </div>
-    <p class="about">Ama full stack developer with several years of experience </p>
+    <p class="about">{{description}} </p>
     <button class="msg-btn">Message Me</button>
     <button class="follow-btn">Following</button>
   

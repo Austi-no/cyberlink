@@ -15,7 +15,10 @@ export class PublicProfileComponent implements OnInit {
   foundProfile: boolean;
   messageClass: string;
   message: any;
+  description: any;
+  phone: any;
 
+  loading: boolean = true
   constructor(private service: SecurityService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,10 +28,14 @@ export class PublicProfileComponent implements OnInit {
       if (!res.success) {
         this.messageClass = 'alert alert-danger'; // Return bootstrap error class
         this.message = res.message; // Return error message
+        this.loading=false
       } else {
         this.username = res.user.username; // Save the username for use in HTML
         this.email = res.user.email; // Save the email for use in HTML
+        this.phone = res.user.phone; // Save the email for use in HTML
+        this.description = res.user.description; // Save the email for use in HTML
         this.foundProfile = true; // Enable profile table
+        this.loading = false;
       }
     })
   }

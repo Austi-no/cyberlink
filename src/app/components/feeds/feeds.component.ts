@@ -53,7 +53,7 @@ export class FeedsComponent implements OnInit {
   city: any;
   country: any;
 
-
+  loading: boolean = true
   constructor(private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute, private securityService: SecurityService,
     private feedService: FeedService, private toastr: ToastrService) { }
@@ -84,7 +84,12 @@ export class FeedsComponent implements OnInit {
     this.getAllFeeds();
     this.securityService.getProfile().subscribe(res => {
       this.username = res.user.username
-    })
+    },
+      error => {
+        console.error(error);
+
+      }
+    )
     this.form = this.formBuilder.group({
       // Body field
       body: ['', Validators.compose([
@@ -101,17 +106,20 @@ export class FeedsComponent implements OnInit {
 
 
   createFeed() {
+    this.loading = true
     const feed = {
       body: this.form.get('body').value,
       createdBy: this.username
     }
     this.feedService.createNewFeed(feed).subscribe(res => {
+
       console.log(res)
       // Check if blog was saved to database or not
       if (!res.success) {
         this.messageClass = 'alert alert-danger'; // Return error class
         this.message = res.message; // Return error message
         this.processing = false; // Enable submit button
+        this.loading = false
       } else {
 
         this.getAllFeeds();
@@ -121,7 +129,8 @@ export class FeedsComponent implements OnInit {
           this.message = res.message; // Return success message
           this.processing = false; // Enable submit button
           this.message = false; // Erase error/success message
-          this.form.reset(); // Reset all form fields
+          this.form.reset();
+          this.loading = false // Reset all form fields
         }, 2000);
       }
     })
@@ -137,22 +146,26 @@ export class FeedsComponent implements OnInit {
       console.log(res)
       console.log(this.feedList)
       this.listOfComments = res.feeds[0].comments.length;;
+      this.loading = false
     })
   }
 
 
   editFeed(): any {
+    this.loading = true
     this.feed.body = this.feedbody
     console.log(this.feed)
     this.feedService.editFeed(this.feed).subscribe(res => {
       if (!res.success) {
         this.messageClass = 'alert alert-danger'; // Return error class
         this.message = "Invalid Feed Cant Save"; // Return error message
+        this.loading = false
       } else {
         this.getAllFeeds()
         console.log(res)
         this.messageClass = 'alert alert-success'; // Return success class
         this.message = res.message;
+        this.loading = false
       }
     })
 
@@ -285,6 +298,7 @@ export class FeedsComponent implements OnInit {
 
   }
   postComment(id: any): any {
+    this.loading = true
     this.processing = true
     const comment = this.commentForm.get('comment').value;
     this.feedService.postComment(id, comment).subscribe(res => {
@@ -293,6 +307,9 @@ export class FeedsComponent implements OnInit {
       this.newComment.splice(index, 1)
       this.processing = false
       console.log(res)
+      this.toastr.success('', res.
+      message)
+      this.loading = false
     })
 
   }
