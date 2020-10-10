@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   usernameValid;
   usernameMessage = false;
   usernamefound: boolean;
-
+  public loading = false;
   // Function to validate e-mail is proper format
   validateEmail(controls) {
     // Create a regular expression
@@ -126,19 +126,23 @@ export class SignupComponent implements OnInit {
 
   signup(): any {
     this.processing = true
+    this.loading = true;
     this.disableForm()
     console.log(this.signupForm.value)
     this.service.createUser(this.signupForm.value).subscribe(res => {
       console.log(res)
       if (!res.success) {
+        this.loading = false;
         this.messageClass = 'alert alert-danger text-center';
         this.message = res.message
         this.processing = false
         this.enableForm()
       } else {
+        this.loading = true;
         this.messageClass = 'alert alert-success';
         this.message = res.message;
         setTimeout(() => {
+          this.loading = true;
           this.router.navigate(['login'])
         }, 2000)
       }

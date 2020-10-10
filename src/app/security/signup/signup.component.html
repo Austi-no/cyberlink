@@ -16,7 +16,7 @@
 
 
 
-      <form class="ui large form" [formGroup]="signupForm">
+      <form class="ui large form" [formGroup]="signupForm" #customLoadingTemplate>
         <div class="ui stacked segment">
 
           <div class="field">
@@ -146,4 +146,8 @@
       </div>
     </div>
   </div>
+
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+  </ngx-loading>
+
 </body>
