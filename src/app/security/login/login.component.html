@@ -1,20 +1,24 @@
-<body >
+<body>
   <div class="ui middle aligned center aligned grid ">
     <div id="login" class="column">
       <h2 class="ui teal image header">
         <!-- <img src="assets/images/logo.png" class="image"> -->
-        <div class="content">
+        <div class="content2">
           Login To Account
         </div>
 
-             <!-- Custom Success/Error Message -->
-      <div class="content2 show-hide-message ">
-        <div [ngClass]="messageClass">
-          {{ message }}
-        </div>
-      </div>
+
       </h2>
- 
+
+      <h4>
+        <!-- Custom Success/Error Message -->
+        <div class="content show-hide-message ">
+          <div [ngClass]="messageClass">
+            {{ message }}
+          </div>
+        </div>
+      </h4>
+
 
 
       <form class="ui large form" [formGroup]="loginForm" #customLoadingTemplate>
@@ -68,6 +72,5 @@
 
 
 </body>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"
-  [template]="customLoadingTemplate">
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
 </ngx-loading>

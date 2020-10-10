@@ -137,7 +137,7 @@ module.exports = (router) => {
                             user.lastName
                         } ${
                             user.firstName
-                        } ❤️❤️❤️</h3></div>
+                        } ❤️</h3></div>
                                           <div>
                                         <p>Your account has been created!, Below are your credentials! Keep Safe</p>
                                               <p>Username:  <strong > ${
@@ -241,7 +241,7 @@ module.exports = (router) => {
                         }, 'Austine', {expiresIn: "1h"});
                         res.json({
                             success: true,
-                            message: "Login Successful ✔️",
+                            message: "Login Successful✔️",
                             token: token,
                             user: {
                                 username: user.username
@@ -298,7 +298,7 @@ module.exports = (router) => {
         if (!req.params.username) {
             res.json({success: false, message: "User not found"});
         } else {
-            User.findOne({username: req.params.username}).select("username email").exec((err, user) => {
+            User.findOne({username: req.params.username}).select("username email description phone").exec((err, user) => {
                 if (err) {
                     res.json({success: false, message: "Error Occurred while fetching user"});
                 } else if (!user) {

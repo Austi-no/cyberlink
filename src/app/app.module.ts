@@ -49,9 +49,9 @@ import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
     CollapseModule.forRoot(),
     ToastrModule.forRoot(),
     NgxLoadingModule.forRoot({
-      // animationType: ngxLoadingAnimationTypes.wanderingCubes,
-      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
-      backdropBorderRadius: '4px',
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      backdropBackgroundColour: 'rgba(0, 0, 0, 0.3)',
+      backdropBorderRadius: '4px', fullScreenBackdrop: true,
       primaryColour: '#e83e8c',
       secondaryColour: '#007bff',
       tertiaryColour: '#fd7e14'
