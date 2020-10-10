@@ -59,6 +59,7 @@
     }
     .btn-share {
         top: 50%;
+        
         right: 3px;
         font-size: 12px;
         font-weight: 700;
@@ -72,9 +73,9 @@
         text-transform: uppercase;
         transform: translateY(-50%);
         // responsive
-        @media #{$xxs-device} {
-            display: none;
-        }
+        // @media #{$xxs-device} {
+        //     display: inline !important;
+        // }
         &:hover {
             background-color: $black-soft;
         }

@@ -1,25 +1,52 @@
 body {
-  background: #50d8af;
+  background: #0264d6;
   /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #0264d6 1%,
+    #1c2b5a 100%
+  );
   /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, #049c6a), color-stop(100%, #1c2b5a));
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(1%, #0264d6),
+    color-stop(100%, #1c2b5a)
+  );
   /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #0264d6 1%,
+    #1c2b5a 100%
+  );
   /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    #0264d6 1%,
+    #1c2b5a 100%
+  );
   /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #50d8af 1%, #0c2e8a 100%);
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    #0264d6 1%,
+    #1c2b5a 100%
+  );
   /* IE10+ */
-  background: radial-gradient(ellipse at center, #50d8af 1%, #0c2e8a 100%);
+  background: radial-gradient(ellipse at center, #0264d6 1%, #1c2b5a 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0264d6', endColorstr='#1c2b5a', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
   height: calc(100vh);
-
 }
 
-body>.grid {
+body > .grid {
   height: 100%;
 }
 
@@ -27,7 +54,6 @@ body>.grid {
   height: 100%;
   width: 100%;
   font-size: 50px;
-
 }
 
 .column {
@@ -40,10 +66,18 @@ a {
 
 .has-error {
   color: red;
-
 }
 
 .has-success {
   color: green;
-
+}
+.content {
+  color: white;
+  font-weight: 800;
+  font-size: 25px;
+}
+@media screen and (max-width: 380px) and (min-width: 200px) {
+  #login {
+    max-width: 300px;
+  }
 }

@@ -1,18 +1,19 @@
 <body>
   <div class="ui middle aligned center aligned grid ">
-    <div class="column">
+    <div id="login" class="column">
       <h2 class="ui teal image header">
-        <img src="assets/images/logo.png" class="image">
+        <!-- <img src="assets/images/logo.png" class="image"> -->
         <div class="content">
           Create a new Account
         </div>
-      </h2>
-      <!-- Custom Success/Error Message -->
-      <div class="row show-hide-message ">
-        <div [ngClass]="messageClass">
-          {{ message }}
+        <!-- Custom Success/Error Message -->
+        <div class="content2 show-hide-message ">
+          <div [ngClass]="messageClass">
+            {{ message }}
+          </div>
         </div>
-      </div>
+      </h2>
+
 
 
       <form class="ui large form" [formGroup]="signupForm">
@@ -135,7 +136,7 @@
                 match</li>
             </ul>
           </div>
-          <button class="ui teal fluid button" [disabled]="!signupForm.valid || processing " (click)="signup()">
+          <button class="ui primary fluid button" [disabled]="!signupForm.valid || processing " (click)="signup()">
             Create Account</button>
         </div>
       </form>

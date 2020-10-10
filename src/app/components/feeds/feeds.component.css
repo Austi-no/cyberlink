@@ -98,7 +98,6 @@
   cursor: pointer;
 }
 
-
 #dropdown-dropup.dropdown-menu {
   left: 0px !important;
   right: auto !important;
@@ -130,13 +129,13 @@ ul#basic-link-dropdown2.dropdown-menu {
   list-style: none;
 }
 
-.we-comet>li {
+.we-comet > li {
   display: inline-block;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.we-comet>li:last-child {
+.we-comet > li:last-child {
   margin-bottom: 0;
 }
 
@@ -147,7 +146,7 @@ ul#basic-link-dropdown2.dropdown-menu {
   width: 7.6%;
 }
 
-.comet-avatar>img {
+.comet-avatar > img {
   max-width: 35px;
   width: 35px;
   min-width: 35px;
@@ -164,35 +163,35 @@ ul#basic-link-dropdown2.dropdown-menu {
 }
 
 .we-comment::before,
-.peoples-mesg-box>ul>li p:before {
+.peoples-mesg-box > ul > li p:before {
   border-bottom: 10px solid transparent;
   border-right: 11px solid #ede9e9;
   border-top: 10px solid transparent;
   left: -11px;
   top: 10px;
   position: absolute;
-  content: '';
+  content: "";
 }
 
 .we-comment::after,
-.peoples-mesg-box>ul>li p:after {
+.peoples-mesg-box > ul > li p:after {
   border-bottom: 8px solid transparent;
   border-right: 9px solid #fff;
   border-top: 8px solid transparent;
   left: -9px;
   top: 12px;
   position: absolute;
-  content: '';
+  content: "";
 }
 
-.we-comet>li ul {
+.we-comet > li ul {
   margin-left: 55px;
   margin-top: 20px;
   padding-left: 0;
   list-style: none;
 }
 
-.we-comet>li ul li {
+.we-comet > li ul li {
   margin-bottom: 20px;
 }
 
@@ -204,7 +203,7 @@ ul#basic-link-dropdown2.dropdown-menu {
   font-weight: 500;
 }
 
-.we-comet>li ul li:last-child {
+.we-comet > li ul li:last-child {
   margin-bottom: 0;
 }
 
@@ -213,7 +212,7 @@ ul#basic-link-dropdown2.dropdown-menu {
   width: 100%;
 }
 
-.coment-head>h5 {
+.coment-head > h5 {
   font-size: 13.5px;
   font-weight: 500;
   padding-bottom: 5px;
@@ -223,7 +222,7 @@ ul#basic-link-dropdown2.dropdown-menu {
   color: #2a2a2a;
 }
 
-.we-comment>p {
+.we-comment > p {
   font-size: 13px;
   line-height: 20px;
   margin-bottom: 0;
@@ -238,7 +237,7 @@ ul#basic-link-dropdown2.dropdown-menu {
   margin-left: 10px;
 }
 
-.coment-head>span {
+.coment-head > span {
   color: #999;
   font-size: 12px;
   padding-left: 10px;
@@ -250,4 +249,15 @@ li.post-comment .comet-avatar {
   max-width: 6%;
   vertical-align: top;
   width: 6%;
+}
+.container {
+  margin-top: 70px !important;
+}
+@media screen and (max-width: 450px) and (min-width: 200px) {
+  .btn-share {
+    display: inline !important;
+    padding: 11px 25px !important;
+    
+
+  }
 }

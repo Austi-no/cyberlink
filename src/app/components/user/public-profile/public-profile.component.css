@@ -68,3 +68,8 @@ button {
 .container i:hover {
   color: #03bfbc;
 }
+@media screen and (max-width: 380px) and (min-width: 200px) {
+  .container {
+    width: 300px;
+  }
+}
