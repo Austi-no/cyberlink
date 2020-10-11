@@ -60,6 +60,7 @@
 }
 
 .post-meta .like {
+  /* position: relative; */
   padding-right: 30px !important;
   transition: 0.8s;
   text-align: center;
@@ -67,8 +68,11 @@
 
 .post-meta .like:hover {
   color: #0077b5;
-  transition: 0.8s;
+  transition: all 0.5s ease-in-out !important;
   border-radius: 5px;
+  box-shadow: 0 2px 0 #0077b5;
+  top: 0px !important;
+  bottom: 0px;
 }
 
 .post-meta2 .bg-white2 {
