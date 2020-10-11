@@ -263,6 +263,7 @@
 	 */
 	Owl.Plugins = {};
 
+	
 	/**
 	 * List of workers involved in the update process.
 	 */

@@ -100,7 +100,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition-property: opacity;
+  /* transition-property: opacity; */
+  /* opacity: 0.9; */
 }
 
 /*--------------------------------------------------------------
