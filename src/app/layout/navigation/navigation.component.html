@@ -1,31 +1,37 @@
 <div id="header">
 
-  <nav class="navbar navbar-expand-sm   navbar-light bg-light fixed-top ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ui small secondary menu shadow-sm fixed-top ">
 
-    <a class=" navbar-brand" href="#">i-Links</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <div class="item">
+      <h5 class="navbar-brand" href="#">i-Links</h5>
+      <!-- <img src="assets/img/logo.png" style="height: 20px; width: 80px;" alt=""> -->
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home
+          <a class="nav-link active" data-toggle="collapse" data-target=".navbar-collapse.show"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/"> <i
+              class="home icon"></i> Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">About</a>
+          <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show"> <i
+              class="info icon"></i> About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact" data-toggle="collapse" data-target=".navbar-collapse.show">Contact</a>
+          <a class="nav-link" href="#contact" data-toggle="collapse" data-target=".navbar-collapse.show"> <i
+              class="mail icon"></i> Contact</a>
         </li>
       </ul>
       <div class="social-part">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="service.getToken()">
+        <ul class="navbar-nav mr-auto mt-lg-0" *ngIf="service.getToken()">
           <li class="nav-item">
-            <a class="nav-link" routerLink="dashboard" data-toggle="collapse"
+            <a class="nav-link" routerLink="profile" data-toggle="collapse"
               data-target=".navbar-collapse.show">Dashboard
             </a>
           </li>
@@ -33,20 +39,47 @@
             <a class="nav-link" routerLink="feeds" data-toggle="collapse" data-target=".navbar-collapse.show">Feeds</a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="profile" data-toggle="collapse"
               data-target=".navbar-collapse.show">Profile</a>
+          </li> -->
+
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-toggle="dropdown">
+              <div class="avatar avatar-sm"><img src="assets/images/team/team-1.jpg" class="rounded-circle" alt="">
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right tx-13">
+              <div class="avatar avatar-lg mg-b-15 ml-2"><img src="assets/images/team/team-1.jpg" class="rounded-circle"
+                  alt="">
+                <div class="ui small blue label">
+                  @{{username}}
+                </div>
+              </div>
+              <a data-toggle="collapse" data-target=".navbar-collapse.show" class="dropdown-item"
+                (click)="editProfile()" style="cursor: pointer;"><i data-feather="edit-3"></i>
+                Edit Profile</a>
+              <a data-toggle="collapse" data-target=".navbar-collapse.show" class="dropdown-item" routerLink="profile"
+                style="cursor: pointer;"><i data-feather="user"></i> View
+                Profile</a>
+              <div class="dropdown-divider"></div>
+
+              <a data-toggle="collapse" data-target=".navbar-collapse.show" (click)="logout()" class="dropdown-item"
+                style="cursor: pointer;"><i data-feather="log-out"></i>Sign
+                Out</a>
+            </div>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="ui  label " style="background: #0c2e8a; color: white;" (click)="logout()" data-toggle="collapse"
               data-target=".navbar-collapse.show">
               <i class="lock alternate icon"></i>
               <b>Logout</b>
             </a>
-          </li>
+          </li> -->
 
         </ul>
+
       </div>
       <div class="ml-4">
         <a class="ui  label " style="background: #0c2e8a; color: white;" routerLink="login" *ngIf="!service.getToken()"

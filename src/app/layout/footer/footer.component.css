@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
 .social-part .fa {
   padding-right: 20px;
+}
+.twitter {
+  color: #1da1f2;
+}
+
+.twitter:hover {
+  color: #14171a;
+}
+.facebook {
+  color: #4267b2;
+}
+.instagram {
+  color: #c13584;
+}
+
+.instagram:hover {
+  color: #e1306c;
+}
+.github {
+  color: #14171a;
+}
+.bottom-logo {
+  font-family: "Special Elite", cursive;
+  font-weight: 800;
+  color: #0077b5;
 }

@@ -1,149 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+.navbar-brand {
+  font-family: "Special Elite", cursive;
+  font-weight: 800;
+  color: #0077b5;
+}
 .social-part .fa {
   padding-right: 20px;
 }
 
-/* * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-nav {
-  background: #0082e6;
-  height: 50px;
-  width: 100%;
-}
-
-label.logo {
-  color: white;
-  font-size: 35px;
-  line-height: 50px;
-  padding: 0 100px;
-  font-weight: bold;
-}
-
-nav ul {
-  float: right;
-  margin-right: 20px;
-}
-
-nav ul li {
-  display: inline-block;
-  line-height: 50px;
-  margin: 0 5px;
-}
-
-nav ul li a {
-  color: white;
-  font-size: 15px;
-  text-transform: uppercase;
-  padding: 7px 13px;
-  border-radius: 3px;
-}
-
-a.active,
-a:hover {
-  background: #1b9bff;
-  transition: 0.5s;
-}
-
-
-.checkbtn {
-  font: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
-}
-
-@media (max-width:952px) {
-  label.logo {
-    font-size: 30px;
-    padding-left: 50px;
-
-  }
-
-  nav ul li a {
-    font-size: 16px;
-  }
-}
-
-@media (max-width:858px) {
-  .checkbtn {
-    display: block;
-  }
-
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all 0.5s;
-
-  }
-
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-
-  nav ul li a {
-    font-size: 20px;
-  }
-
-  a:hover,
-  a.active {
-    background: none !important;
-    color: #0082e6 !important;
-  }
-
-  #check:checked~ul {
-    left: 0;
-  }
-} */
-
-
-ul li a {
-  margin-right: 20px;
-}
-/* 
-.active {
-  color: #0c2e8a !important;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 20px;
-  transition: 0.7s;
-}
-
-.active:hover {
-  background-color: #0c2e8a;
-  color: white !important;
-
-} */
-
 .nav-link {
   cursor: pointer;
-} */
+}
+*/
 
 /* .navbar {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
 } */
  .fixed-top {
-  height: 60px;
+  height: 40px !important;
+}
+
+.rounded-circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
 }

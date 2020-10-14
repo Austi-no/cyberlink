@@ -12,15 +12,22 @@ import { SessionService } from 'src/app/security/auth/session.service';
 })
 export class NavigationComponent implements OnInit {
   userLoggedIn = false
+  username: any;
   constructor(public service: SecurityService, private router: Router) { }
 
   ngOnInit() {
+    this.service.getProfile().subscribe(res => {
+      this.username = res.user.username
 
+    })
   }
   logout() {
     this.service.logout();
     this.router.navigate(["/"])
 
+  }
+  editProfile() {
+    this.router.navigate(['/update-user'])
   }
 
 }
